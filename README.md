@@ -1,30 +1,12 @@
 # Scalinng-Iris-dataset
 <p>In iris dataset, normalize the value of each columns in dataset</br>
 Answer:</br>
-There are two methods to implement normalization in this dataset:</br>
+There are three methods to implement normalization in this dataset:</br>
 <h3>Method 1: </h3></br>
-Implement normalization such as MinMaxScalar in each column one by one.</br>
-from sklearn.preprocessing import MinMaxScaler
-scaler=MinMaxScaler(feature_range=(0,1))
-df[["sepal length (cm)"]]=scaler.fit_transform(df[["sepal length (cm)"]])
-df[["sepal width (cm)"]]=scaler.fit_transform(df[["sepal width (cm)"]])
-df[["petal length (cm)"]]=scaler.fit_transform(df[["petal length (cm)"]])
-df[["petal width (cm)"]]=scaler.fit_transform(df[["petal width (cm)"]])
+Implement normalization such as MinMaxScalar in each column one by one. You can find the codes, in code file</br>
 
-Method 2:
-Implement normalization such as MinMaxScalar in each column one by one. Same as method one, but it will be one exhausted method if the number of features will be so many. Thus make a list of feature names and implement normalization by for loop as below:
-from sklearn.preprocessing import StandardScaler
-scaler=StandardScaler()
-columns_names=["sepal length (cm)","sepal width (cm)","petal length (cm)","petal width (cm)"]
-for column in columns_names:
-    df[[column]]=scaler.fit_transform(df[[column]])
-df.head()
-
-Method 3:
-As all columns in dataset are numeric data, thus we can implement scaler to whole dataset to whole columns in one-line code. Note that if there are some categorical data, this approach will not work.
-from sklearn.preprocessing import Normalizer
-norm=Normalizer()
-df=norm.fit_transform(df)
-from sklearn.preprocessing import Binarizer
-binarizer=Binarizer(threshold=0.0)
-df=binarizer.fit_transform(df)<p>
+<h3>Method 2: </h3></br>
+Implement normalization such as MinMaxScalar in each column one by one. Same as method one, but it will be one exhausted method if the number of features will be so many. Thus make a list of feature names and implement normalization by for loop. Find the source code in code file in method 2 section.</br> 
+<h3>Method 3:</h3></br>
+As all columns in dataset are numeric data, thus we can implement scaler to whole dataset to whole columns in one-line code. Note that if there are some categorical data, this approach will not work. The source codes are available in code file in section method 3.
+</p>
