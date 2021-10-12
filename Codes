@@ -1,0 +1,21 @@
+#Method 1:
+from sklearn.preprocessing import MinMaxScaler
+scaler=MinMaxScaler(feature_range=(0,1))
+df[["sepal length (cm)"]]=scaler.fit_transform(df[["sepal length (cm)"]])
+df[["sepal width (cm)"]]=scaler.fit_transform(df[["sepal width (cm)"]])
+df[["petal length (cm)"]]=scaler.fit_transform(df[["petal length (cm)"]])
+df[["petal width (cm)"]]=scaler.fit_transform(df[["petal width (cm)"]])
+#Method 2:
+from sklearn.preprocessing import StandardScaler
+scaler=StandardScaler()
+columns_names=["sepal length (cm)","sepal width (cm)","petal length (cm)","petal width (cm)"]
+for column in columns_names:
+    df[[column]]=scaler.fit_transform(df[[column]])
+df.head()
+#Method 3:
+from sklearn.preprocessing import Normalizer
+norm=Normalizer()
+df=norm.fit_transform(df)
+from sklearn.preprocessing import Binarizer
+binarizer=Binarizer(threshold=0.0)
+df=binarizer.fit_transform(df)
