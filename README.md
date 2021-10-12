@@ -1,9 +1,9 @@
 # Scalinng-Iris-dataset
-<p>In iris dataset, normalize the value of each columns in dataset
-Answer:
-There are two methods to implement normalization in this dataset:
-Method 1: 
-Implement normalization such as MinMaxScalar in each column one by one.
+<p>In iris dataset, normalize the value of each columns in dataset</br>
+Answer:</br>
+There are two methods to implement normalization in this dataset:</br>
+<h3>Method 1: </h3></br>
+Implement normalization such as MinMaxScalar in each column one by one.</br>
 from sklearn.preprocessing import MinMaxScaler
 scaler=MinMaxScaler(feature_range=(0,1))
 df[["sepal length (cm)"]]=scaler.fit_transform(df[["sepal length (cm)"]])
