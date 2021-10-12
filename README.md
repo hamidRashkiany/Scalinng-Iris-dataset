@@ -1,5 +1,5 @@
 # Scalinng-Iris-dataset
-In iris dataset, normalize the value of each columns in dataset
+<p>In iris dataset, normalize the value of each columns in dataset
 Answer:
 There are two methods to implement normalization in this dataset:
 Method 1: 
@@ -27,4 +27,4 @@ norm=Normalizer()
 df=norm.fit_transform(df)
 from sklearn.preprocessing import Binarizer
 binarizer=Binarizer(threshold=0.0)
-df=binarizer.fit_transform(df)
+df=binarizer.fit_transform(df)<p>
